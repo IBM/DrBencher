@@ -1,0 +1,52 @@
+[project]
+name = "drbencher"
+version = "1.0.0"
+description = "DrBencher — benchmark-generation framework for knowledge-intensive, multi-hop LLM evaluation (COLM 2026)"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.12"
+
+dependencies = [
+    "numpy>=1.21.0",
+    "requests>=2.28.0",
+    "pydantic>=1.10.0",
+    "tqdm>=4.64.0",
+    "aiohttp>=3.8.0",
+    "beautifulsoup4>=4.11.0",
+
+    # LLM providers
+    "openai>=1.0.0",
+    "anthropic>=0.7.0",
+    "vllm>=0.4.0",
+
+    # HuggingFace
+    "transformers>=4.30.0",
+    "torch>=2.0.0",
+    "datasets>=2.10.0",
+
+    # Tools
+    "pyautogen>=0.2.0",
+    "streamlit>=1.20.0",
+
+    # Optional (used with import guards). Cap sentence-transformers below 5.x:
+    # 5.x hard-depends on torchcodec (audio/video), which needs system FFmpeg
+    # (libavutil.so.*) and a matching torch — unavailable on typical GPU clusters
+    # and unnecessary here (we only use text embeddings for diversity filtering).
+    "sentence-transformers>=2.2.0,<5",
+    "scipy>=1.9.0",
+    "scikit-learn>=1.1.0",
+
+    # Retrieval-index build (scripts/indexing/build_retrieval_index.py):
+    # dense = Granite embeddings (sentence-transformers) over FAISS; lexical = BM25.
+    "faiss-cpu>=1.7.0",
+    "rank-bm25>=0.2.2",
+
+    # gpt-oss-120b / OpenAI Harmony
+    "openai-harmony",
+    "gpt-oss",
+]
+
+[tool.uv]
+# This is a runnable research repo, not a distributable library: manage the
+# environment without building/installing the project itself.
+package = false
