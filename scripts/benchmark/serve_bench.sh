@@ -1,4 +1,7 @@
 #!/bin/bash
+# Copyright IBM Corp. 2026
+# SPDX-License-Identifier: Apache-2.0
+
 #
 # Run a DrBencher domain against a SHARED gpt-oss-120b vLLM server.
 #

@@ -1,3 +1,6 @@
+# Copyright IBM Corp. 2026
+# SPDX-License-Identifier: Apache-2.0
+
 """
 Enroot-sandboxed stateful Python execution environment.
 

@@ -1,3 +1,6 @@
+# Copyright IBM Corp. 2026
+# SPDX-License-Identifier: Apache-2.0
+
 """Geophysical reasoning templates: multi-step physics/math computations
 grounded in Wikidata entity properties (P2044, P625, P2048).
 

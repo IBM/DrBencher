@@ -1,3 +1,6 @@
+# Copyright IBM Corp. 2026
+# SPDX-License-Identifier: Apache-2.0
+
 """Biochemistry Tool for V2 agentic verification.
 
 Provides a Harmony-compatible tool that wraps PubChem, UniProt, PDB,

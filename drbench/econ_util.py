@@ -1,3 +1,6 @@
+# Copyright IBM Corp. 2026
+# SPDX-License-Identifier: Apache-2.0
+
 """World Bank WDI API utilities for economics benchmark.
 
 Provides functions to fetch country economic data from the World Bank's free

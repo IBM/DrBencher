@@ -1,3 +1,6 @@
+# Copyright IBM Corp. 2026
+# SPDX-License-Identifier: Apache-2.0
+
 """Security/Cyber API utilities for cybersecurity benchmark.
 
 Provides hardcoded reference data for cryptographic algorithms and MITRE ATT&CK

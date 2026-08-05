@@ -1,3 +1,6 @@
+# Copyright IBM Corp. 2026
+# SPDX-License-Identifier: Apache-2.0
+
 """
 OpenAI-API-compatible generator for vLLM serve (or any OpenAI-compatible endpoint).
 

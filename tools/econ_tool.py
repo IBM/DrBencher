@@ -1,3 +1,6 @@
+# Copyright IBM Corp. 2026
+# SPDX-License-Identifier: Apache-2.0
+
 """World Bank Economics Tool for V2 agentic verification.
 
 Provides a Harmony-compatible tool that wraps the World Bank WDI API,

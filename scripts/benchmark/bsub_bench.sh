@@ -1,4 +1,7 @@
 #!/bin/bash
+# Copyright IBM Corp. 2026
+# SPDX-License-Identifier: Apache-2.0
+
 #
 # Submit a DrBencher domain generation run to LSF (bsub) on a GPU node.
 # gpt-oss-120b under vLLM needs GPUs, so it cannot run on the login node — this

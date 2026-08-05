@@ -1,3 +1,6 @@
+# Copyright IBM Corp. 2026
+# SPDX-License-Identifier: Apache-2.0
+
 """SEC EDGAR XBRL API utilities for financial benchmark.
 
 Provides functions to fetch company financial data from SEC EDGAR's free XBRL API,

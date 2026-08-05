@@ -1,3 +1,6 @@
+# Copyright IBM Corp. 2026
+# SPDX-License-Identifier: Apache-2.0
+
 """Shared validation utilities for all sub-benchmarks.
 
 Phase 1/1.5 helpers (chain-based fact extraction and grounding verification)

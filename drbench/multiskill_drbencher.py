@@ -1,3 +1,6 @@
+# Copyright IBM Corp. 2026
+# SPDX-License-Identifier: Apache-2.0
+
 """
 Multi-Skill Benchmark: Combines hard multi-hop entity identification (Wikidata KG)
 with hard domain-specific reasoning (scientific, mathematical).

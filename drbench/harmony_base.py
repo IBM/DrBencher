@@ -1,3 +1,6 @@
+# Copyright IBM Corp. 2026
+# SPDX-License-Identifier: Apache-2.0
+
 """
 Shared Harmony-format generation logic for gpt-oss-120b.
 

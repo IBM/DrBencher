@@ -1,3 +1,6 @@
+# Copyright IBM Corp. 2026
+# SPDX-License-Identifier: Apache-2.0
+
 """Security/Cyber Benchmark: Cryptographic Standards + MITRE ATT&CK.
 
 Creates questions in a 2-level difficulty space:

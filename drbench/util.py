@@ -1,3 +1,6 @@
+# Copyright IBM Corp. 2026
+# SPDX-License-Identifier: Apache-2.0
+
 import os, sys, json
 import glob  # NOTE: torch is imported lazily inside functions (see below), not
             # here, so `import drbench.util` stays torch-free for the serve client.

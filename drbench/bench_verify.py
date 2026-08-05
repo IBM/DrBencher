@@ -1,3 +1,6 @@
+# Copyright IBM Corp. 2026
+# SPDX-License-Identifier: Apache-2.0
+
 """Benchmark answerability verification (V1 closed-book, V2 agentic).
 
 Extracted from the former math_harmony_drbencher.py — only the live verification

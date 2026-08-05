@@ -1,3 +1,6 @@
+# Copyright IBM Corp. 2026
+# SPDX-License-Identifier: Apache-2.0
+
 """Economics reasoning templates: template definitions and selection functions.
 
 Mirrors ``financial_template.py`` — extracted from ``economics_drbencher.py``

@@ -1,4 +1,7 @@
 #!/bin/bash
+# Copyright IBM Corp. 2026
+# SPDX-License-Identifier: Apache-2.0
+
 #
 # Apply the diversity filter to already-generated *_v2_filtered.json files.
 # For each domain under output/<domain>/, merges the per-category v2_filtered

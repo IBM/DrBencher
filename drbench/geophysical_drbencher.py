@@ -1,3 +1,6 @@
+# Copyright IBM Corp. 2026
+# SPDX-License-Identifier: Apache-2.0
+
 """Geophysical Benchmark: multi-step physics reasoning with Wikidata entity data.
 
 Creates questions requiring 3-5 reasoning steps: the solver must identify

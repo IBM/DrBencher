@@ -1,3 +1,6 @@
+# Copyright IBM Corp. 2026
+# SPDX-License-Identifier: Apache-2.0
+
 """Financial reasoning templates: template definitions and selection functions.
 
 Extracted from ``financial_drbencher.py`` to keep the main module focused on

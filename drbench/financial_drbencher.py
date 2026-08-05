@@ -1,3 +1,6 @@
+# Copyright IBM Corp. 2026
+# SPDX-License-Identifier: Apache-2.0
+
 """Financial Due Diligence Benchmark: SEC EDGAR XBRL data as ground truth.
 
 Creates questions in a 2-level difficulty space:

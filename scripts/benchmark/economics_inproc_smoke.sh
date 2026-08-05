@@ -1,4 +1,7 @@
 #!/bin/bash
+# Copyright IBM Corp. 2026
+# SPDX-License-Identifier: Apache-2.0
+
 #
 # Economics SMOKE test, IN-PROCESS vLLM (the original --use_harmony backend).
 #

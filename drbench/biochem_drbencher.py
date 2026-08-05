@@ -1,3 +1,6 @@
+# Copyright IBM Corp. 2026
+# SPDX-License-Identifier: Apache-2.0
+
 """Biochemistry Benchmark: PubChem + UniProt data as ground truth.
 
 Creates questions in a 2-level difficulty space:
