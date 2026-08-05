@@ -13,7 +13,7 @@
 #
 # Tunables (environment variables, all optional):
 #   NGPU       number of GPUs        (default 4; also sets TENSOR_PARALLEL_SIZE)
-#   GROUP      LSF fairshare group   (-G, default grp_alignment; "" to omit)
+#   GROUP      LSF fairshare group   (-G; set to your LSF group, "" to omit)
 #   QUEUE      LSF queue (-q)        (default: LSF's default queue if unset)
 #   PROJECT    LSF project (-P)      (default: none)
 #   WALLTIME   wall-clock limit (-W) (default 168:00, i.e. HH:MM)
@@ -43,7 +43,9 @@ if [ ! -f "$RUN_SCRIPT" ]; then
 fi
 
 NGPU="${NGPU:-4}"
-GROUP="${GROUP-grp_alignment}"
+# Set GROUP to your own LSF fairshare group id for `bsub -G`
+# (e.g. `export GROUP=grp_myteam`); leave it unset to submit without -G.
+# GROUP="${GROUP-grp_alignment}"   # <-- replace grp_alignment with your group
 WALLTIME="${WALLTIME:-168:00}"
 # CPU slots scale with GPUs: vLLM tensor-parallel workers are GPU-bound, so a
 # few cores per GPU (driver + workers + tokenization) is plenty. Default 2/GPU

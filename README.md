@@ -164,10 +164,14 @@ domain's per-category `*_v2_filtered.json` files into
 filter in place (rejected items are written to `<merged>_bad.json`):
 
 ```bash
-bsub -J diversity_filter -n 4 -M 64G -W 2:00 -G grp_alignment \
+bsub -J diversity_filter -n 4 -M 64G -W 2:00 -G <your_lsf_group> \
      -o ./LOGS/diversity_filter.%J.out -e ./LOGS/diversity_filter.%J.err \
      bash scripts/run_diversity_filter.sh
 ```
+
+Replace `<your_lsf_group>` with your own LSF fairshare group id (or drop `-G`
+entirely to submit without a group). The `bsub_bench.sh` / `serve_bench.sh` /
+`*_inproc_smoke.sh` scripts take the same value via the `GROUP` env var.
 
 Runs the six domains by default; pass domain names to scope. Flags/env:
 `--min-distance` (`MIN_DISTANCE`, default 0.3), `--method graph|greedy` (`METHOD`),

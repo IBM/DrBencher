@@ -23,7 +23,7 @@
 #
 # Tunables (env vars, optional):
 #   NGPU (4)  PORT (8000)  MODEL (openai/gpt-oss-120b)  GPU_MEM (0.9)
-#   GROUP (grp_alignment; "" to omit)  QUEUE (cluster default)  WALLTIME (168:00)
+#   GROUP (your LSF group; "" to omit)  QUEUE (cluster default)  WALLTIME (168:00)
 #   STARTUP_TIMEOUT (2700)  JOBNAME (gptoss_serve)
 set -euo pipefail
 
@@ -34,7 +34,9 @@ NGPU="${NGPU:-4}"
 PORT="${PORT:-8000}"
 MODEL="${MODEL:-openai/gpt-oss-120b}"
 GPU_MEM="${GPU_MEM:-0.9}"
-GROUP="${GROUP-grp_alignment}"
+# Set GROUP to your own LSF fairshare group id for `bsub -G`
+# (e.g. `export GROUP=grp_myteam`); leave it unset to submit without -G.
+# GROUP="${GROUP-grp_alignment}"   # <-- replace grp_alignment with your group
 WALLTIME="${WALLTIME:-168:00}"
 STARTUP_TIMEOUT="${STARTUP_TIMEOUT:-2700}"
 JOBNAME="${JOBNAME:-gptoss_serve}"

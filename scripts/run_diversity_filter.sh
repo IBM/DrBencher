@@ -10,7 +10,7 @@
 # Diversity filtering is a CPU job (sentence-transformer embeddings), so run it
 # on a compute node via bsub — NOT on the login node (torch import is killed
 # there):
-#   bsub -J diversity_filter -n 4 -M 64G -W 2:00 -G grp_alignment \
+#   bsub -J diversity_filter -n 4 -M 64G -W 2:00 -G <your_lsf_group> \
 #        -o ./LOGS/diversity_filter.%J.out -e ./LOGS/diversity_filter.%J.err \
 #        bash scripts/run_diversity_filter.sh
 #

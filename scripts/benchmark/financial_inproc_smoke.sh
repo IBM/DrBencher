@@ -18,7 +18,7 @@
 # the QA bug) and we fall back to the serve-split for fetching.
 #
 # Tunables (env vars, optional):
-#   NGPU (4)  GROUP (grp_alignment; "" to omit)  QUEUE (cluster default)
+#   NGPU (4)  GROUP (your LSF group; "" to omit)  QUEUE (cluster default)
 #   WALLTIME (4:00)  SECTOR (construction)  PER_SECTOR (3)  SAMPLES (2)  RUN_ID
 set -euo pipefail
 
@@ -26,7 +26,9 @@ REPO_ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 cd "$REPO_ROOT"
 
 NGPU="${NGPU:-4}"
-GROUP="${GROUP-grp_alignment}"
+# Set GROUP to your own LSF fairshare group id for `bsub -G`
+# (e.g. `export GROUP=grp_myteam`); leave it unset to submit without -G.
+# GROUP="${GROUP-grp_alignment}"   # <-- replace grp_alignment with your group
 WALLTIME="${WALLTIME:-4:00}"
 SECTOR="${SECTOR:-construction}"
 PER_SECTOR="${PER_SECTOR:-3}"
