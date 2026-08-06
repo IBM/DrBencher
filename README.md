@@ -108,6 +108,14 @@ outbound pip access that cluster nodes often block). Place the image at
 `DRBENCHER_ENROOT_SQSH` at it. If enroot or the image is absent, it falls back to the venv
 worker automatically; set `DRBENCHER_NO_ENROOT=1` to force the fallback.
 
+Download the prebuilt image (586 MiB) from the [release assets](https://github.com/IBM/DrBencher/releases/tag/assets-v1):
+
+```bash
+mkdir -p assets
+curl -L -o assets/python_tool.sqsh \
+  https://github.com/IBM/DrBencher/releases/download/assets-v1/python_tool.sqsh
+```
+
 Override the interpreter or GPU count via environment variables (point `PYTHON` at the
 uv-managed environment):
 
