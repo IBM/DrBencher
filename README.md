@@ -1,5 +1,8 @@
 # DrBencher
 
+📄 **Paper:** https://arxiv.org/abs/2604.09251
+📊 **Data:** [`./data/drbencher`](./data/drbencher)
+
 **DrBencher** is a benchmark-generation framework that creates challenging, verifiable,
 and diverse evaluation datasets for agentic language models, using no seed passages or provenance
 text for QA generation and producing every QA pair answer-first in the following order:
