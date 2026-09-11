@@ -11,11 +11,6 @@ from pydantic import BaseModel, Extra, root_validator
 from typing import Any, Callable, Dict, List, Optional, Union, Tuple
 from time import sleep
 from collections import Counter, defaultdict
-try:
-    from autogen.code_utils import extract_code, execute_code
-except ImportError:
-    extract_code = None
-    execute_code = None
 import numpy as np
 from bs4 import BeautifulSoup
 from .util import gen_from_prompt
@@ -278,16 +273,19 @@ def extract_json_v2(json_text, outfilename):
         except Exception:
             pass
 
-    # Fifth try: use extract_code as fallback
-    if json_dict is None and extract_code is not None:
+    # Fifth try: parse fenced blocks carrying a non-JSON language tag. This used
+    # to depend on pyautogen's extract_code for a small optional fallback.
+    if json_dict is None:
         try:
             if '...' in response:
                 response = response.replace('...', '')
-            extracted_json = extract_code(response)
+            extracted_json = re.findall(
+                r"```[^\n`]*\n([\s\S]*?)```", response
+            )
             combined_json = []
-            for xx in extracted_json:
+            for candidate in extracted_json:
                 try:
-                    parsed = ast.literal_eval(xx[1])
+                    parsed = ast.literal_eval(candidate.strip())
                     if isinstance(parsed, list):
                         combined_json.extend(parsed)
                     else:
