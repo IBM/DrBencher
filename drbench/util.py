@@ -78,7 +78,7 @@ def load_model(modelpath):
 def load_via_deepspeed(model_name):
     import torch
     from transformers import AutoConfig, AutoModelForCausalLM
-    from transformers.deepspeed import HfDeepSpeedConfig
+    from transformers.integrations import HfDeepSpeedConfig
     config = AutoConfig.from_pretrained(model_name)
     world_size = int(os.getenv('WORLD_SIZE', '1'))
     dtype = config.torch_dtype  # torch.bfloat16 if model_name in ["bigscience/bloom", "bigscience/bigscience-small-testing"] else torch.float16

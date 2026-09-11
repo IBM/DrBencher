@@ -11,28 +11,27 @@ dependencies = [
     "requests>=2.28.0",
     "pydantic>=1.10.0",
     "tqdm>=4.64.0",
-    "aiohttp>=3.8.0",
+    "aiohttp>=3.14.3",
     "beautifulsoup4>=4.11.0",
 
     # LLM providers
     "openai>=1.0.0",
     "anthropic>=0.7.0",
-    "vllm>=0.4.0",
+    "vllm>=0.27.0",
 
     # HuggingFace
-    "transformers>=4.30.0",
-    "torch>=2.0.0",
+    "transformers>=5.10.0",
+    "torch>=2.13.0",
     "datasets>=2.10.0",
 
     # Tools
-    "pyautogen>=0.2.0",
     "streamlit>=1.20.0",
 
-    # Optional (used with import guards). Cap sentence-transformers below 5.x:
-    # 5.x hard-depends on torchcodec (audio/video), which needs system FFmpeg
-    # (libavutil.so.*) and a matching torch — unavailable on typical GPU clusters
-    # and unnecessary here (we only use text embeddings for diversity filtering).
-    "sentence-transformers>=2.2.0,<5",
+    # Optional at runtime (used with import guards), but kept in the reproducible
+    # environment for diversity filtering. Version 5+ is required by the patched
+    # Transformers 5.x line; the TF-IDF fallback remains available if optional
+    # multimedia libraries cannot load on a cluster node.
+    "sentence-transformers>=5.0.0",
     "scipy>=1.9.0",
     "scikit-learn>=1.1.0",
 
@@ -50,3 +49,18 @@ dependencies = [
 # This is a runnable research repo, not a distributable library: manage the
 # environment without building/installing the project itself.
 package = false
+
+# Security floors for transitive dependencies. Keep these here rather than
+# adding packages that DrBencher does not import to the runtime dependencies.
+constraint-dependencies = [
+    "cryptography>=50.0.0",
+    "gitpython>=3.1.59",
+    "tornado>=6.5.8",
+]
+
+# vLLM currently caps setuptools below the security-patched release even though
+# DrBencher uses it only as packaging/build infrastructure. Force the secure
+# version until vLLM relaxes its upper bound.
+override-dependencies = [
+    "setuptools>=83.0.0",
+]
