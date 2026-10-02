@@ -55,7 +55,10 @@ package = false
 constraint-dependencies = [
     "cryptography>=50.0.0",
     "gitpython>=3.1.59",
-    "tornado>=6.5.8",
+    # IBM/DrBencher#7: JWT validation, HTTP transport, and server security fixes.
+    "pyjwt>=2.15.1",
+    "urllib3>=2.8.0",
+    "tornado>=6.5.10",
 ]
 
 # vLLM currently caps setuptools below the security-patched release even though
